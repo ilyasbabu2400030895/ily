@@ -1,56 +1,73 @@
-/* ===== HEADER STYLING ===== */
-header {
-  height: 50px;                /* Header is 50 pixels tall */
-  line-height: 50px;           /* Vertically centers text inside header */
-  background: linear-gradient(to right, red, orange);  /* Red to orange gradient background */
-  color: white;                /* White text for contrast */
+header{
+    height: 50px;
+    background: linear-gradient(90deg, purple 0%, blue 100%);
+    color: white;
+    line-height: 50px;
 }
 
-/* ===== FOOTER STYLING ===== */
-footer {
-  height: 30px;                /* Footer is 30 pixels tall */
-  line-height: 30px;           /* Vertically centers text */
-  background: linear-gradient(to right, orange, red);  /* Orange to red background */
-  font-size: 8pt;              /* Small font for footer text */
-  color: white;                /* White text color */
+footer{
+    height: 30px;
+    line-height: 30px;
+    font-size: 8pt;
+    color: white;
+    background: linear-gradient(90deg, red 0%, blue 100%);
+    text-align: center;
 }
 
-/* ===== MAIN SECTION STYLING ===== */
-section {
-  height: calc(100% - 80px);   /* Takes the full page height minus header (50px) and footer (30px) */
-  overflow: auto;              /* Adds scrollbar if content is too long */
+section{
+    height: calc(100% - 80px);
+    overflow: auto;
 }
 
-/* ===== SLIDER CONTAINER ===== */
-.slider {
-  width: 100%;                 /* Takes the full width of the screen */
-  height: 100%;                /* Takes the full height of the section */
-  overflow: hidden;            /* Hides content that overflows (needed for sliding effect) */
+nav{
+    display: flex;
+    justify-content: space-between;
 }
 
-/* ===== SLIDES WRAPPER ===== */
-.slides {
-  width: 100%;                 /* Full width of container */
-  height: 100%;                /* Full height */
-  display: flex;               /* Arranges child slides side-by-side horizontally */
-  transition: transform 1s ease-in-out; /* Smooth sliding animation when slides move */
+nav .logo{
+    font-size: 20pt;
+    font-weight: bold;
+    margin-left: 15px;
 }
 
-/* ===== INDIVIDUAL SLIDE STYLING ===== */
-.slide {
-  width: 100%;                 /* Each slide takes the full width of the screen */
-  height: 100%;                /* Full height of the slider */
-  background-size: 100% 100%;  /* Background image covers the full slide without repeating */
-  flex-shrink: 0;              /* Prevents slide from shrinking when container resizes */
+nav ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-/* ===== BACKGROUND IMAGES FOR EACH SLIDE ===== */
-.s1 {
-  background-image: url('/b1.png'); /* First slide uses image b1.png */
+nav ul li{
+    margin: 0 15px;
 }
-.s2 {
-  background-image: url('/b2.png'); /* Second slide uses image b2.png */
+
+nav .menu{
+    margin-right: 15px;
+    font-size: 20pt;
+    display: none;
 }
-.s3 {
-  background-image: url('/b3.png'); /* Third slide uses image b3.png */
+
+/*Responsiveness*/
+@media(max-width: 768px){
+    nav .menu{
+        display: block;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        background: white;
+        width: 100%;
+    }
+    nav ul.active{
+        display: block;
+    }
+    nav ul li{
+        background: linear-gradient(90deg, blue 0%, purple 100%);
+        padding: 0;
+        margin: 2px 0 0 0;
+    }
 }
